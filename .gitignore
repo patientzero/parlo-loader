@@ -1,0 +1,35 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python bytecode and packaging artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+
+# Test, lint, type-check, and coverage outputs
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.nox/
+.coverage*
+htmlcov/
+coverage.xml
+
+# Notebook checkpoints and macOS metadata
+.ipynb_checkpoints/
+.DS_Store
+
+# Local environment settings; retain the example template
+.env
+.env.*
+!.env.example
+
+# Local PARLO corpus, caches, and reference paper
+/parlo_dataset/
+.parlo-cache/
+/braun_lrec_2026_parlo_dementia_corpus.pdf

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "parlo-loader"
+version = "0.1.0"
+description = "Lazy PARLO corpus exploration and participant-safe evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["polars>=1.44.2,<2", "numpy>=1.24", "soundfile>=0.12", "scipy>=1.10"]
+
+[project.optional-dependencies]
+torch = ["torch>=2.2", "cloudpickle>=3"]
+huggingface = ["datasets>=3", "cloudpickle>=3"]
+notebook = ["jupyterlab>=4", "ipywidgets>=8", "matplotlib>=3.8", "nbclient>=0.10"]
+test = ["pytest>=8", "nbformat>=5", "nbclient>=0.10", "ipykernel>=6", "build>=1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/parlo"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/examples", "/README.md", "/VALIDATION.md", "/pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
