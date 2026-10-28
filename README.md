@@ -9,6 +9,42 @@ ASR inference, or metric scoring is included.
 
 Python 3.10 or newer:
 
+### Directly from GitHub
+
+Install into a virtual environment without manually cloning the repository:
+
+```bash
+uv venv
+uv pip install "parlo-loader @ git+https://github.com/patientzero/parlo-loader.git"
+```
+
+Or add it as a dependency of an existing uv project:
+
+```bash
+uv add "parlo-loader @ git+https://github.com/patientzero/parlo-loader.git"
+```
+
+Include optional integrations by specifying extras:
+
+```bash
+uv add "parlo-loader[notebook,torch,huggingface] @ git+https://github.com/patientzero/parlo-loader.git"
+```
+
+For a reproducible revision, replace `COMMIT_SHA` with an existing full commit
+hash. A published tag can also be used in place of `COMMIT_SHA` in the pip command,
+or selected with `--tag TAG_NAME` instead of `--rev COMMIT_SHA` in the add command:
+
+```bash
+uv pip install "parlo-loader @ git+https://github.com/patientzero/parlo-loader.git@COMMIT_SHA"
+uv add "parlo-loader @ git+https://github.com/patientzero/parlo-loader.git" --rev COMMIT_SHA
+```
+
+The package is still imported as `parlo`. See the
+[uv Git dependency documentation](https://docs.astral.sh/uv/concepts/projects/dependencies/#git)
+for additional reference options.
+
+### From a local checkout
+
 ```bash
 uv venv
 uv pip install .
